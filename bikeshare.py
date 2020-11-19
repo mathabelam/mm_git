@@ -1,7 +1,7 @@
 import time
 from datetime import datetime as dt
 import pandas as pd
-import numpy as np
+#import numpy as np
 import statistics as st
 
 
@@ -12,7 +12,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 #Creating my own period dictionaries to simplify user input
 
 months = {1:'January',2:'February',3:'March',4:'April',5:'May',6:'June', 100:'All'}
-days = {6:'Sunday',0:'Monday',1:'Tuesday',2:'Wednesday',3:'Thursday',4:'Friday',5:'Saturday',100:'All'}
+days = {0:'Monday',1:'Tuesday',2:'Wednesday',3:'Thursday',4:'Friday',5:'Saturday',6:'Sunday',100:'All'}
 cities = ['Chicago', 'Washington', 'New York City']
 
 #FOR MY SOLUTION I WILL COMBINE MY DATASETS INTO ONE DATAFRAME - to learn appending dataframes
@@ -56,30 +56,25 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
+
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     city = ''
     while city not in cities:
         city = input('Choose a city to explore:chicago, new york city OR washington : ').title()
     print('Thanks, you selected ', city)
-
-
-
+    print('PLEASE NOTE: NO BIRTH nor GENDER data available for WASHINGTON users')
 
     # TO DO: get user input for month (all, january, february, ... , june)
     month = ''
     while month not in months:
-        m_holder = input('Do you want to analyse a particular month? Choose 1 - 6 OR 100 for ALL: ')
+        m_holder = input('Choose a month to analyse between Jan-June ENTER 1 - 6 OR 100 for ALL: ')
         month = int(m_holder)
-
-
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     day = 1000 #starting day choice to be FALSE
     while day not in days:
         d_holder =input('Do you want to analyse a particular day of the week? Choose Mon = 0, Sun = 6 OR 100 for ALL: ')
         day =int(d_holder)
-
-
 
     print('-'*40)
     return city, month, day
@@ -107,12 +102,8 @@ def load_data(city, month, day,df):
     if day != 100:                              #Filters data by selected day
         df = df[df['day'] == day]
 
-
-
-
-
-
     return df
+
 
 def view_data(df,city):
     # Offering the user an option to see the first 5 records of filtered data
@@ -127,12 +118,6 @@ def view_data(df,city):
 
     print('Here are the 1st 5 records in',city,' dataset')
     print(df.iloc[0:5])
-
-
-
-
-
-
 
 
 def time_stats(df):
@@ -238,9 +223,6 @@ def user_stats(df,city):
         print('NO USER TYPE DATA AVAILABLE FOR WASHINGTON')
 
 
-
-
-
     # TO DO: Display counts of gender
     if city != 'Washington':                                #Washington dataset does not have a gender field
         female_user_count = df[df['Gender']== 'Female']['Gender'].count()
@@ -259,9 +241,6 @@ def user_stats(df,city):
         print('Most Common Year of Birth: ',int(st.mode(df['Birth Year'])))
     else:
         print('NO DATE OF BIRTH DATA AVAILABLE FOR WASHINGTON')
-
-
-
 
 
     print("\nThis exercise took %s seconds." % (time.time() - start_time))
