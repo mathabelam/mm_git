@@ -12,7 +12,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 #Creating my own period dictionaries to simplify user input
 
 months = {1:'January',2:'February',3:'March',4:'April',5:'May',6:'June', 100:'All'}
-days = {6:'Sunday',0:'Monday',1:'Tuesday',2:'Wednesday',3:'Thursday',4:'Friday',5:'Saturday',100:'All'}
+days = {0:'Monday',1:'Tuesday',2:'Wednesday',3:'Thursday',4:'Friday',5:'Saturday',6:'Sunday',100:'All'}
 cities = ['Chicago', 'Washington', 'New York City']
 
 #FOR MY SOLUTION I WILL COMBINE MY DATASETS INTO ONE DATAFRAME - to learn appending dataframes
