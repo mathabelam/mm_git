@@ -139,7 +139,7 @@ def time_stats(df):
     common_hour = df['start hour'].mode().iloc[0]
     print('Most Common Hour: ', common_hour)
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis exercise took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 def month_growth_stats(df,city):
@@ -161,7 +161,7 @@ def month_growth_stats(df,city):
     print('By',months[end_month],'total rides were',f"{rides_latest_month:,d}")
     print('Total Rides Growth = ',rides_growth,'%')
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis exercise took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
@@ -185,7 +185,7 @@ def station_stats(df):
     common_trip = st.mode(df['trip'])
     print('Most Common Trip: ', common_trip)
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis exercise took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
@@ -205,7 +205,7 @@ def trip_duration_stats(df):
     print('Average Travel Time: ',f"{ int(mean_travel_time):,d}")
 
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis exercise took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
@@ -242,7 +242,7 @@ def user_stats(df,city):
         print('NO DATE OF BIRTH DATA AVAILABLE FOR WASHINGTON')
 
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis exercise took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
