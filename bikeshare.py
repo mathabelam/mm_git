@@ -62,6 +62,7 @@ def get_filters():
     while city not in cities:
         city = input('Choose a city to explore:chicago, new york city OR washington : ').title()
     print('Thanks, you selected ', city)
+    print('PLEASE NOTE: NO BIRTH nor GENDER data available for WASHINGTON users')
 
     # TO DO: get user input for month (all, january, february, ... , june)
     month = ''
