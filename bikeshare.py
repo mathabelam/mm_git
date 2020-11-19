@@ -68,7 +68,7 @@ def get_filters():
     # TO DO: get user input for month (all, january, february, ... , june)
     month = ''
     while month not in months:
-        m_holder = input('Do you want to analyse a particular month? Choose 1 - 6 OR 100 for ALL: ')
+        m_holder = input('Choose a month to analyse between Jan-June ENTER 1 - 6 OR 100 for ALL: ')
         month = int(m_holder)
 
 
